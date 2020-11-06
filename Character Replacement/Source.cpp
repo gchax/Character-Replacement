@@ -5,10 +5,10 @@ void replacement(char*, char, char);
 
 int main()
 {
-	char text[1000], takeOut, replace;
+	char text[1000], find, replace;
 	cin.getline(text, 1000);
-	cin >> takeOut >> replace;
-	replacement(&text[0], takeOut, replace);
+	cin >> find >> replace;
+	replacement(&text[0], find, replace);
 	cout << text;
 
 	return 0;
@@ -16,12 +16,17 @@ int main()
 
 void replacement(char* s, char o, char r)
 {
-	for (int i = 0;s[i] != '\0';i++)
-	{
-		if (s[i] == o)
+	int i = 0;
+	while (1)
+	{ 
+		if (s[i] != '\0')
 		{
-			s[i] = r;
-			break;
+			if (s[i] == o)
+			{
+				s[i] = r;
+				break;
+			}
+			i++;
 		}
 	}
 }
