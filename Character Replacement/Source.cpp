@@ -2,6 +2,7 @@
 using namespace std;
 
 void replacement(char*, char, char);
+int stringLength(char*);
 
 int main()
 {
@@ -27,6 +28,14 @@ void replacement(char* s, char f, char r)
 				break;
 			}
 			i++;
+			if (i == stringLength(&s[0])) break;
 		}
 	}
+}
+
+int stringLength(char* s)
+{
+	int n = 0;
+	for (int i = 0;s[i] != '\0';i++) n++;
+	return n;
 }
