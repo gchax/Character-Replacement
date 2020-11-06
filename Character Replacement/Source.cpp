@@ -14,14 +14,14 @@ int main()
 	return 0;
 }
 
-void replacement(char* s, char o, char r)
+void replacement(char* s, char f, char r)
 {
 	int i = 0;
 	while (1)
 	{ 
 		if (s[i] != '\0')
 		{
-			if (s[i] == o)
+			if (s[i] == f)
 			{
 				s[i] = r;
 				break;
