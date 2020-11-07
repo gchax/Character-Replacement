@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void replacement(char*, char, char, char*);
+void replacement(char*, char, char, char*, int);
 
 int main()
 {
@@ -10,25 +10,20 @@ int main()
 	cin.getline(text, 1000);
 	cin >> find >> replace;
 	cin >> request;
-	replacement(&text[0], find, replace, &request[0]);
+	replacement(&text[0], find, replace, &request[0], count);
 
 	cout << text;
 
 	return 0;
 }
 
-void replacement(char* str, char fnd, char rp, char* rq)
+void replacement(char* str, char fnd, char rp, char* rq, int n)
 {
-	int n = 0;
 	for (int i = 0;str[i] != '\0';i++)
 	{
 		if (str[i] == fnd)
 		{
-			if (rq[n] == 'Y' || rq[n] == 'y')
-			{
-				rq[n] = rp;
-				str[i] = rq[n];
-			}
+			if (rq[n] == 'Y' || rq[n] == 'y') str[i] = rp;
 			n++;
 		}
 	}
